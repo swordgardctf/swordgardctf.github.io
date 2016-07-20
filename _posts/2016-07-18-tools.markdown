@@ -1,0 +1,96 @@
+---
+layout: post
+title:  "Tools and Workflow Optimization"
+date:   2016-07-18 00:51:39 -0400
+categories: productivity
+---
+Productivity is something most people underestimate the importance of. When it comes down to data manipulation and daily work flow, you want to make sure you're prepared and using the right tools for the right job to make sure you're being as efficient as possible. When you've not set up something that could be done simply with the right tool can turn into a daunting task. Ultimately, using optimized tools can snowball quickly allowing you to save more time, time that can be used learning new skills, optimizing flows, or makin' money. However, be careful, some people get too good at optimization. In theory, automating your whole job sounds amazing, but you wouldn't want to lose your job [like this guy did][reddit-guy].  
+
+Most of the following tools have been mastered by quite a lot of developers and devops people, unfortunately many infosec people are still using outdated or inefficient tools.
+
+While I know that there is quite a degree of subjectivity in tool choice, some tools are flat out less efficient to a degree which cannot be ignored. When selecting a toolchain, I'm evaluating the efficiency it would provide to my workflow as a major criterion. Here are some of the core precepts that motivated me in choosing the following, all in order of degree of importance.
+
+1. Keyboard over mouse - The less you transition between mouse and keyboard, the more productive you will become.
+2. Command line over GUI - GUI can't be scripted most of the time (unless an API is available). 
+3. Lightweight - You don't want to be held back by sluggish environments, it can really kill your flow.
+4. Extensible with modular design - Everyone has their own needs and sometimes you are the best person to make sure the right tools work optimally for your setup.
+5. Easily moveable to a new system with similar configuration. This is where dot-files really shine.
+6. Low learning curve - This one is less important, but it depends on the steepness of learning curve when compared to the time saved in the long run.
+7. Open source - Is a plus, but dead projects are usually a no-go.
+
+One last note, I strongly advocate going "cold turkey" when learning a new tool as much as possible. Forcing yourself to learn a new tool and depending exclusively on it will force you to learn the ins and out in as little time as possible. There is no better way to learn vim than to uninstall your old text editor!
+
+Without further ado, here are some of my personal favorite tools.
+
+# Text editor
+*Neovim*. As someone once said, the best thing about vim is its user interface. It forces you to use the keyboard exclusively and to let go of the mouse. The code base and plugin system behind it could use some work. That's why Neovim was created. It consists of a completely rewrite of vim with asynchronous hooks. No more freezing when editing long code files! I strongly suggest using dein as a plugin manager with it. 
+
+Alternative: Emacs. Never tried it, but as long as it uses keyboard over mouse you should be able to gain a lot in terms of efficiency.
+
+No-go: Nano, notepad++, sublime, etc... However, it is true that some of these editors have plugins that mimics Vim or Emacs.
+
+On a side note, regardless of what your text editor is, you should put significant time maxing out its potential. It should be as convenient as a full-blown IDE while still being lightweight. You should be able to quickly move from one place to another using all available motions, learn how to edit multiple files, make efficient change repetitions and so on. For vim and vi-like editors, I recommend reading Practical Vim, editing at the speed of thought to help you get started. Learning to type quickly will then grant you even more benefits, as such it may be worth doing some exercises to learn to type faster. 
+
+# Task management
+*Taskwarrior*. I tried multiple ways to keep track of everything I have to do, from todo files to outlook events. One issue always popped up, the lack of "focus" that was possible with any other methods. When you look at a typical TODO file, you will often have multiple entries you wrote being blocked until a certain period, but they still clutter your TODO file and they end up taking a small amount of your focus if only with their presence. Taskwarrior solves this problem by allowing you to hide tasks until a certain time. Furthermore, your task list is now available anywhere from the command line, tasks are kept even when they are done, due dates can be set with sensible options (due:5d for example), and the whole thing can easily be scripted for repeating tasks. 
+
+Alternatives: None yet have come close so far for me, but feel free to contribute.
+
+# Shell 
+*Fish*. Fish is the friendly interactive shell. It has most of OhMyZShell's features but works right out of the box with little to no customization. It allows for syntax highlighting, remembering commands used in same folders (for better autocomplete guesses) and more. It just does a better job out of the box than the bash shell. 
+
+Alternatives: ZShell + OhMyZShell. This is a more powerful shell that may require more setup. So far fish has done the trick for me but ZShell may have features of which I am unaware of.
+
+No-go: Bash. 
+
+# Terminal multiplexer
+*Tmux*. Tmux serves many purposes, namely it allows you to keep your shell open even when you lose a connection (similar to screen). It does also allow you to have multiple panes and tabs for a single shell, allowing you to easily create "views" and "environments" not only on your local computer, but also easily on remote computers and these views will persist through a disconnect. 
+Things you should know about tmux: How to manipulate multiple panes and tabs efficiently.
+
+Alternatives: Byobu. A rewrite of tmux, not too sure of its additionnal features. Systemd is also working on a concept that may just do the same thing as Tmux at some point, but it is not here yet.
+
+No-go: No multiplexer or screen. No multiplexer is just not a viable option in many remote cases. As for screen, it has been considered deprecated for a long while and tmux consists of a complete rewrite which is pretty much a drop-in replacement. Control b instead of control a and you get similar results except you have more features.
+
+# Shell setup
+*Tmuxinator* (if using tmux). Tmuxinator allows you to easily recreate tmux "environments" or projects. That is, you can create a simple config file which dictates that when you use mux __project_name__, the same programs will open every time in the same pane and tab layout. This allows you to easily start your workflow whenever your system is rebooted or if you wish to use a similar workflow on a different computer and have it be self-contained. My tmuxinator file is available below.
+
+
+# File manager
+*vifm*. Vifm is a simple curse-based shell to manipulate files. I personally prefer it over normal shell file manipulation in specific cases when manipulating non-easily regexable files to be moved around.
+
+Alternative: Using your shell to move files around.
+
+No-go: OS gui file interface.
+
+# Browser
+*Pedactyl/vivium/vimperator*. Following the previous mindset, a vim-like keybindings for your browser. Avoid using the mouse where possible for more efficient browsing.
+
+# OS
+*Linux/OSX*.
+
+Alternative : Windows.
+
+Things you should know: Ultimately your OS does not matter much as long as you can be efficient with it. I use OSX but I feel like linux is more powerful all around and look forward to switching to it at some point. There are however things you need to be able to do with your OS efficiently in order to improve your workflow, regardless of choice. A quick list off the top of my head would be:
+*Install programs via the command line with a package manager.
+*Compile programs when no binaries are available via the command line if possible.
+*Be able to pipe programs one into another.
+*Move windows around as well as switch programs using keyboard exclusively.
+*Easily open files in appropriate program from command line.
+*Seamlessly pipe into clipboard and use clipboards in different places.
+
+
+# Coding
+*Python*. Python allows you to quickly write code without too much effort. If you do use python, remember to compartmentalize using virtualenv and virtualenvwrapper!
+
+Let me preface with the following: there is quite a bit of debate as to how code should be written for pentest tools. The scale goes from quick-n-dirty scripts to enterprise-grade fault-resistant tools. I for one feel like bash piping scripts are fine for "attended, one-time use" work, that is if you are handling an edge case for the first time and just need it done now. I do feel like any sort of "piping" is unacceptable for mass-reusable script. This is because if any "unexpected" output appears (a newly encountered exception), there is no way to control the flow of your program to easily identify empty output from invalid output, especially when using tools like grep in piping. I am a strong advocate for good logging and well compartmentalized tools when it comes down to your core tool-set. If something goes wrong or a new case is encountered, the original tool output should be saved and not altered. I feel like dirty scripting may save you a bit of time now, but it quickly becomes worth your time to have good code that will be resilient in multiple different infrastructures. Enterprise-grade coding is something that is worth the time investing into.
+
+Alternatives: Ruby, Go, Rust, Javascript (server-side), any non-shell script that is mature.
+
+# Final notes
+* You should consider adding scripts to your bin folder whenever you use the same commands over and over in different places in your workflow. If the set of commands is highly repetitive but not very context-specific, then it is a good candidate to be refactored into a function or script and to make it available globally.
+* When switching to a tool, if possible add all of your configuration changes to a dot file that can easily be moved to a different system.
+* Some tools have entire communities dedicated to them (see vim/emacs). I strongly suggest taking a look at more experienced user's opinions and at their configuration files just to get an idea of what is possible.
+
+Ultimately all of these tool choices are subjective to some degree, but there is a lot efficiency to be gained by switching to tools and techniques that are easily scripted and re-usable. I suggest always switching one tool at a time to avoid cognitive overload and not to put too much additional stress on your daily workflow, however that tool should be swapped in its entirety even if it means uninstalling the previously swapped-out tool. While the first tool to transition through is often the hardest, switching afterwards becomes easier due to the efficiency previously acquired and can be used to "sponsor" learning of a new tool.
+
+[reddit-guy]: http://interestingengineering.com/programmer-automates-job-6-years-boss-fires-finds/
