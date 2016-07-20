@@ -71,12 +71,12 @@ No-go: OS gui file interface.
 Alternative : Windows.
 
 Things you should know: Ultimately your OS does not matter much as long as you can be efficient with it. I use OSX but I feel like linux is more powerful all around and look forward to switching to it at some point. There are however things you need to be able to do with your OS efficiently in order to improve your workflow, regardless of choice. A quick list off the top of my head would be:
-*Install programs via the command line with a package manager.
-*Compile programs when no binaries are available via the command line if possible.
-*Be able to pipe programs one into another.
-*Move windows around as well as switch programs using keyboard exclusively.
-*Easily open files in appropriate program from command line.
-*Seamlessly pipe into clipboard and use clipboards in different places.
+* Install programs via the command line with a package manager.
+* Compile programs when no binaries are available via the command line if possible.
+* Be able to pipe programs one into another.
+* Move windows around as well as switch programs using keyboard exclusively.
+* Easily open files in appropriate program from command line.
+* Seamlessly pipe into clipboard and use clipboards in different places.
 
 
 # Coding
